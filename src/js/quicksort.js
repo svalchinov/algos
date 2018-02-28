@@ -15,5 +15,5 @@ function quicksort(arr) {
     return quicksort(left).concat(pivot).concat(quicksort(right));
 }
 
-const sorted = quicksort([6, 4, 9, 3, 1, 10, 7, 5, 2, 8, 3]);
-console.log("Sorted " + sorted);
+console.log("Sorted " + quicksort([6, 4, 9, 3, 1, 10, 7, 5, 2, 8, 3]));
+// Sorted 1,2,3,3,4,5,6,7,8,9,10
