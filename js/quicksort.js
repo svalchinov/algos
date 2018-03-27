@@ -1,35 +1,19 @@
-package main
-
-import (
-	"fmt"
-)
-
-func quicksort(arr []int) []int {
-
-	arrLen := len(arr)
-	if arrLen < 1 {
-		return arr
-	}
-
-	last := arrLen - 1
-	pivot, left, right := arr[last], make([]int, 0), make([]int, 0)
-	arr = arr[:last] // pop
-
-	for _, item := range arr {
-		if item <= pivot {
-			left = append(left, item)
-		} else {
-			right = append(right, item)
-		}
-	}
-
-	return append(append(quicksort(left), pivot), quicksort(right)...)
-}
-
-func main() {
-	arr := []int{6, 4, 5, 7, 3, 9, 10, 2, 8, 1, 1}
-	fmt.Println(quicksort(arr))
-}
-
-// [1 1 2 3 4 5 6 7 8 9 10]
-// Program exited.
+function quicksort(arr) {
++
++    if (arr.length < 1) { return arr; }
++
++    const pivot = arr.pop(), left = [], right = [];
++
++    arr.forEach((item) => {
++        if (item <= pivot) {
++            left.push(item);
++        } else {
++            right.push(item);
++        }
++    });
++
++    return quicksort(left).concat(pivot).concat(quicksort(right));
++}
++
++console.log("Sorted " + quicksort([6, 4, 9, 3, 1, 10, 7, 5, 2, 8, 3]));
++// Sorted 1,2,3,3,4,5,6,7,8,9,10
