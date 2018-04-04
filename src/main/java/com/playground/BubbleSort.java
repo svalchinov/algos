@@ -1,4 +1,4 @@
-package com.algorithms;
+package com.playground;
 
 public class BubbleSort {
 

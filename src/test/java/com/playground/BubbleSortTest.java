@@ -1,4 +1,4 @@
-package com.algorithms;
+package com.playground;
 
 import org.junit.Test;
 
